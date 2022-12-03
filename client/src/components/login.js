@@ -8,13 +8,21 @@ const Login=()=>{
         email:"",
         password:""
     })
+
+   const handleInput=(e)=>{
+    const {name,value}=e.target
+    setUser({
+        ...user,[name]:value
+    })
+   }
+
    const loginUser=()=>{
-    // const {email,password}=user
-    // if(email && password){
-    //     axios.post("http://localhost:4500/",user)
-    //     .then(res=>alert(res.data.message))
-    // }
-    navigate("/home")
+    const {email,password}=user
+    if(email && password){
+        axios.post("http://localhost:4500/login",user)
+        .then(res=>alert(res.data.message))
+        navigate('/home')
+    }
 
    }
 
@@ -24,8 +32,8 @@ const Login=()=>{
         <div className="container">
         <h1>Member Login</h1>
         <form>
-        <input type="text" placeholder="Enter email" value={user.email} onChange={(e)=>setUser(e.target.value)}/>
-        <input type="password" placeholder="Enter Password" value={user.password}  onChange={(e)=>setUser(e.target.value)}/>
+        <input type="text" placeholder="Enter email" name="email" value={user.email} onChange={handleInput}/>
+        <input type="password" placeholder="Enter Password" name="password" value={user.password}  onChange={handleInput}/>
         <div className="login" onClick={loginUser}>Login</div>
         <div className="or">or</div>
         <div className="register" onClick={()=>navigate("/register")}>Register</div>

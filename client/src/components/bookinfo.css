@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bookinfo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(1, 1, 97);
+}
+.bookinfo-container .bookinfo .show-list{
+    width: 30%;
+    height: 35px;
+    border:1px solid burlywood;
+    color: burlywood;
+    text-align: center;
+    padding-top: 5px;
+}
+.bookinfo-container .bookinfo .table-view{
+    text-align: center;
+    color: white;
+}
+.bookinfo-container .bookinfo .title{
+    text-align: center;
+    color: white;
+}
+.table{
+    width: 1000px;
+}
+.btns{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+.btns .delete{
+    width: 30%;
+    height: 35px;
+    color: white;
+    border: 1px solid red;
+    text-align: center;
+    padding-top: 5px;
+}
+.btns .edit{
+    border: 1px solid goldenrod;
+    width: 30%;
+    height: 35px;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+}
